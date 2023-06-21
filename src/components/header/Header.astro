@@ -1,0 +1,67 @@
+---
+// components
+import TopNav from './TopNav.astro';
+import LogoIcon from '../icons/LogoIcon.astro';
+import SearchIcon from '../icons/SearchIcon.astro';
+import CartIcon from '../icons/CartIcon.astro';
+import MenuIcon from '../icons/MenuIcon.astro';
+import DarkIcon from '../icons/DarkIcon.astro';
+import Navigation from './Navigation.astro';
+---
+<header>
+	<nav class="nav-container">
+		<div class="nav-group">	
+			<DarkIcon />
+			<a 
+				class="logo"
+				href="/" 
+			>
+				<span class="logoicon"><LogoIcon /></span>
+				<h2>LOGO...<span>and slogan...</span></h2>
+			</a>
+		</div>
+		<TopNav />
+		<div class="nav-icons">
+			<SearchIcon />
+			<CartIcon />
+			<MenuIcon />
+		</div>
+	</nav>
+	<Navigation />
+</header>
+
+<style type="text/css">
+	nav {
+		border-bottom: 1px solid var(--medium-contrast);
+	}
+	.nav-group {
+		display: flex;
+		align-items: center;
+	}
+	.logo {
+		padding: .5rem 0;
+		display: flex;
+		align-items: center;
+	}
+	.logo h2 {
+		font-weight: bold;
+	}
+	.logoicon {
+		transform: translateY(3px);
+		margin-right: 5px;
+	}
+	span {
+		color: var(--accent-background-start);
+		font-weight: 400;
+	}
+	.nav-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 1rem;
+	}
+	.nav-icons {
+		display: flex;
+		transform: translateY(3px);
+	}
+</style>

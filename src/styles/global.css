@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	/* theming */
+	/* colorbook */
+	/* dark theme */
+	--main-background-dark: hsl(234, 12%, 23%);
+	--component-background-dark: hsl(234 ,12% ,25%);
+	--high-contrast-dark: hsl(234 ,0% ,100%);
+	--medium-contrast-dark: hsl(234 ,11% ,81%);	/* gradients */
+
+	/* light theme */
+	--main-background-light: hsl(234, 27%, 98%);
+	--component-background-light: hsl(234 ,0% ,100%);
+	--high-contrast-light: hsl(234 ,24% ,31%);
+	--medium-contrast-light: hsl(234 ,12% ,46%);
+	
+	/* Shared */
+	--accent: steelblue;
+	--accent-background-start: #5688a4;
+	--accent-background-end: #468cb4;
+	
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+/* App */
+.app {
+	--main-background: var(--main-background-light);
+	--component-background: var(--component-background-light);
+	--high-contrast: var(--high-contrast-light);
+	--medium-contrast: var(--medium-contrast-light);
+	--highlight-background: var(--highlight-background-light);
+	--highlight-text: var(--higlight-text-light);
+
+	background-color: var(--main-background);
+}
+
+/*@media (prefers-color-scheme: dark) {
+	.app {
+		--main-background: var(--main-background-dark);
+		--component-background: var(--component-background-dark);
+		--high-contrast: var(--high-contrast-dark);
+		--medium-contrast: var(--medium-contrast-dark);
+		--highlight-background: var(--highlight-background-dark);
+		--highlight-text: var(--higlight-text-dark);
+	}
+}
+*/
+.dark {
+	--main-background: var(--main-background-dark);
+	--component-background: var(--component-background-dark);
+	--high-contrast: var(--high-contrast-dark);
+	--medium-contrast: var(--medium-contrast-dark);
+	--highlight-background: var(--highlight-background-dark);
+	--highlight-text: var(--higlight-text-dark);
+}
+
+/* nav styles */
+.top-nav {
+	display: none;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+.nav-links {
+  font-size: .8rem;
+  font-weight: 500;
+  width: 100%;
+  top: 5rem;
+  left: 48px;
+  background-color: var(--component-background);
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-transform: lowercase;
+}
+
+.nav-links a:hover, a:focus {
+  background-color: var(--component-background);
+}
+
+.expanded {
+  display: unset;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 636px) {
+  .top-nav {
+    display: block;
+    position: static;
+    width: auto;
+  }
+  .top-nav a {
+    display: inline-block;
+    text-transform: lowercase;
+    padding: 12px 8px;
+  }
+  .top-nav a:hover, a:focus {
+    background-color: var(--component-background);
+  }
+  .nav-links {
+    /* margin-left: 5em; */
+    display: none;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 8px 16px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+}
+
+.cart-icon {
+  cursor: pointer;
+}
+
+.dark-icon {
+	cursor: pointer;
+}
+
+.svg-btn {
+  transition: .2s ease;
+}
+.svg-btn:hover {
+  transform: scale(1.1);
+}

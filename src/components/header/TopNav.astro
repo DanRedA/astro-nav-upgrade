@@ -1,0 +1,32 @@
+---
+import navData from '../../data/navData.js';
+---
+<div class="top-nav">
+	<ul class="nav-list">
+		{
+			navData.map((item) => (
+				<a href={item.path}>{item.name}</a>
+			))
+		}
+	</ul>
+</div>
+
+<style type="text/css">
+	.nav-list a.active {
+		text-decoration: underline #5688a4 0.2rem;
+		text-underline-offset: .6rem;
+	}
+</style>
+<!-- other styles in global.css -->
+
+<script type="text/javascript">
+	const nav = document.querySelector(".nav-list");
+	const navLinks = nav.querySelectorAll("a");
+	const currentUrl = window.location.href;
+
+	navLinks.forEach((link) => {
+		if (link.href === currentUrl) {
+			link.classList.add("active");
+		}
+	});
+</script>

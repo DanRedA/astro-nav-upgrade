@@ -1,0 +1,32 @@
+---
+import navData from '../../data/navData.js';
+import SearchIcon from '../icons/SearchIcon.astro';
+---
+<div class="nav-links">
+	<ul class="nav-list">
+		{
+			navData.map((item) => (
+				<a href={item.path}>{item.name}</a>
+			))
+		}
+	</ul>
+	 <SearchIcon />
+</div>
+
+<style type="text/css">
+	.nav-list a.active {
+		background: #5688a4;
+	}
+</style>
+
+<script type="text/javascript">
+	const nav = document.querySelector(".nav-list");
+	const navLinks = nav.querySelectorAll("a");
+	const currentUrl = window.location.href;
+
+	navLinks.forEach((link) => {
+		if (link.href === currentUrl) {
+			link.classList.add("active");
+		}
+	});
+</script>
